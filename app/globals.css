@@ -25,6 +25,7 @@ body {
   color: var(--fg);
   background: var(--bg);
   font-family: var(--font-sans);
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -46,14 +47,14 @@ img {
 }
 
 section {
-  padding: 80px 24px;
-  max-width: 1024px;
+  padding: 96px 24px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 @media (max-width: 640px) {
   section {
-    padding: 48px 16px;
+    padding: 56px 16px;
   }
 }
 
@@ -86,7 +87,8 @@ section {
 }
 
 .navbar-pill-item {
-  padding: 6px 14px;
+  padding: 7px 18px;
+  font-size: 14px;
   border-radius: 999px;
   font-size: 13px;
   font-weight: 500;
@@ -161,10 +163,10 @@ section {
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  gap: 32px;
   align-items: center;
   width: 100%;
-  max-width: 680px;
+  max-width: 760px;
   margin: 0 auto;
 }
 
@@ -192,9 +194,9 @@ section {
 }
 
 .hero-title {
-  font-size: 52px;
+  font-size: 56px;
   font-weight: 700;
-  letter-spacing: -1px;
+  letter-spacing: -1.5px;
   color: var(--accent);
   margin: 0;
   line-height: 1.1;
@@ -202,19 +204,27 @@ section {
 }
 
 .hero-divider {
-  width: 60px;
-  height: 2px;
+  width: 64px;
+  height: 3px;
   background: linear-gradient(90deg, #22c55e 0%, transparent 100%);
-  margin: 20px 0;
+  margin: 24px 0;
   border-radius: 2px;
 }
 
 .hero-desc {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.7;
   color: var(--muted);
   margin: 0;
-  max-width: 340px;
+  max-width: 380px;
+}
+
+.hero-subdesc {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 4px 0 0;
+  max-width: 380px;
 }
 
 .hero-terminal {
@@ -223,7 +233,7 @@ section {
   gap: 10px;
   margin-top: 20px;
   font-family: var(--font-mono);
-  font-size: 14px;
+  font-size: 15px;
   color: #666;
   background: rgba(255, 255, 255, 0.03);
   padding: 8px 14px;
@@ -243,14 +253,14 @@ section {
 /* Skills */
 .skills-section {
   padding: 60px 24px 80px;
-  max-width: 880px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
 .skills-title {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 600;
-  margin-bottom: 28px;
+  margin-bottom: 32px;
   letter-spacing: -0.3px;
   text-align: center;
 }
@@ -259,7 +269,7 @@ section {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .skill-item {
@@ -267,8 +277,8 @@ section {
   align-items: center;
   gap: 8px;
   font-family: var(--font-mono);
-  font-size: 13px;
-  padding: 6px 16px 6px 10px;
+  font-size: 14px;
+  padding: 7px 18px 7px 12px;
   border: 1px solid var(--border);
   border-radius: 999px;
   color: var(--muted);
@@ -302,7 +312,7 @@ section {
 
 .cube-pre {
   color: #E6E9EE;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.1;
   font-family: "Courier New", Courier, monospace;
   white-space: pre;
@@ -343,10 +353,10 @@ section {
 
 .hero-cta {
   display: inline-block;
-  padding: 10px 28px;
+  padding: 8px 22px;
   border: 1px solid var(--fg);
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--fg);
   transition: background 0.2s, color 0.2s;
 }
@@ -385,20 +395,20 @@ section {
 }
 
 .project-body {
-  padding: 20px 24px 24px;
+  padding: 24px 28px 28px;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
 .project-title {
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .project-desc {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--muted);
   line-height: 1.7;
   flex: 1;
@@ -414,7 +424,7 @@ section {
 .project-link {
   display: inline-block;
   margin-top: 16px;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--accent);
   border-bottom: 1px solid transparent;
   transition: border-color 0.2s;
@@ -432,7 +442,7 @@ section {
 
 .tech-tag {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   padding: 2px 8px;
   border: 1px solid var(--border);
   border-radius: 3px;
@@ -445,17 +455,148 @@ section {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  font-size: 16px;
+  font-size: 17px;
   color: var(--fg);
   opacity: 0.75;
   transition: opacity 0.2s;
 }
 
 .contact-link svg {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
 }
 
 .contact-link:hover {
   opacity: 1;
+}
+
+/* Contact */
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.contact-links .contact-link {
+  justify-content: center;
+}
+
+/* Services */
+.services-section {
+  padding: 60px 24px 80px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.services-title,
+.section-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 48px;
+  letter-spacing: -0.3px;
+  text-align: center;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.service-card {
+  text-align: left;
+}
+
+.service-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: rgba(34, 197, 94, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.service-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.service-name {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--fg);
+}
+
+.service-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* WhatsApp float */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 998;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #22c55e;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(34, 197, 94, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 24px rgba(34, 197, 94, 0.4);
+}
+
+/* CTA variants */
+.hero-cta-primary {
+  background: var(--fg);
+  color: var(--bg);
+  border-color: var(--fg);
+}
+
+.hero-cta-primary:hover {
+  background: transparent;
+  color: var(--fg);
+}
+
+.hero-cta-secondary {
+  background: transparent;
+  color: var(--fg);
+  border-color: var(--border);
+}
+
+.hero-cta-secondary:hover {
+  border-color: var(--fg);
+}
+
+.btn-solicitar {
+  padding: 12px 34px;
+  font-size: 15px;
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-links .contact-link {
+    justify-content: center;
+  }
+  .hero-text-block .hero-cta {
+    font-size: 13px;
+    padding: 8px 20px;
+  }
 }

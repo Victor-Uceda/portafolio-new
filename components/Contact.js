@@ -1,27 +1,9 @@
 export default function Contact() {
   return (
     <section id="contacto" style={{ textAlign: "center" }}>
-      <h2
-        style={{
-          fontSize: 22,
-          fontWeight: 600,
-          marginBottom: 32,
-          letterSpacing: "-0.3px",
-          textAlign: "center",
-        }}
-      >
-        Contacto
-      </h2>
+      <h2 className="section-title">Contacto</h2>
 
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: 16,
-          maxWidth: 400,
-          margin: "0 auto",
-        }}
-      >
+      <div className="contact-links" style={{ maxWidth: 360, margin: "0 auto 36px" }}>
         <a
           href="https://wa.me/51901682201"
           target="_blank"
@@ -60,6 +42,15 @@ export default function Contact() {
           <span>victorhugouceda@gmail.com</span>
         </a>
       </div>
+
+      <a
+        href="https://wa.me/51901682201"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hero-cta hero-cta-primary btn-solicitar"
+      >
+        Solicitar
+      </a>
     </section>
   );
 }

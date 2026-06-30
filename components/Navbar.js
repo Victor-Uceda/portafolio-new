@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const links = [
   { label: "Home", href: "#hero" },
+  { label: "Servicios", href: "#servicios" },
   { label: "Skills", href: "#skills" },
   { label: "Proyectos", href: "#proyectos" },
   { label: "Contacto", href: "#contacto" },
@@ -12,6 +13,31 @@ const links = [
 export default function Navbar() {
   const [active, setActive] = useState("Home");
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const ids = links.map((l) => l.href.slice(1));
+    const observers = [];
+
+    for (const id of ids) {
+      const el = document.getElementById(id);
+      if (!el) continue;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            const label = links.find((l) => l.href === `#${id}`)?.label;
+            if (label) setActive(label);
+          }
+        },
+        { rootMargin: "-40% 0px -55% 0px" }
+      );
+
+      observer.observe(el);
+      observers.push(observer);
+    }
+
+    return () => observers.forEach((o) => o.disconnect());
+  }, []);
 
   return (
     <>

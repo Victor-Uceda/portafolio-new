@@ -11,7 +11,10 @@ export default function Hero() {
             <div className="hero-divider" />
 
             <p className="hero-desc">
-              Ingenieria de Sistemas e Informatica. Code, learn, repeat.
+              Soluciones de software a la medida
+            </p>
+            <p className="hero-subdesc">
+              Ingeniero en Sistemas e Informatica
             </p>
 
             <div className="hero-terminal">
@@ -19,8 +22,11 @@ export default function Hero() {
               <span className="hero-cmd">cd /home/victor/projects</span>
             </div>
 
-            <div style={{ marginTop: 28 }}>
-              <a href="#proyectos" className="hero-cta">
+            <div style={{ marginTop: 28, display: "flex", gap: 12 }}>
+              <a href="https://wa.me/51901682201" target="_blank" rel="noopener noreferrer" className="hero-cta hero-cta-primary">
+                Trabajemos juntos
+              </a>
+              <a href="#proyectos" className="hero-cta hero-cta-secondary">
                 Ver Proyectos
               </a>
             </div>
