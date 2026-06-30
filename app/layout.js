@@ -3,11 +3,25 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata = {
-  title: "Victor Uceda | Ingenieria de Sistemas e Informatica",
+  title: "Victor Uceda | Soluciones de software a la medida",
   description:
-    "Portfolio personal de Victor Uceda. Proyectos web, tecnologia y aprendizaje continuo.",
+    "Desarrollo de landing pages, sitios web y aplicaciones. Ingeniero en Sistemas e Informatica.",
   icons: {
     icon: "/favicon.svg",
+  },
+  openGraph: {
+    title: "Victor Uceda | Soluciones de software a la medida",
+    description:
+      "Desarrollo de landing pages, sitios web y aplicaciones. Ingeniero en Sistemas e Informatica.",
+    type: "website",
+    locale: "es_PE",
+    siteName: "Victor Uceda",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Victor Uceda | Soluciones de software a la medida",
+    description:
+      "Desarrollo de landing pages, sitios web y aplicaciones. Ingeniero en Sistemas e Informatica.",
   },
 };
 
