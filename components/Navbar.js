@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const links = [
   { label: "Home", href: "#hero" },
@@ -13,6 +13,21 @@ const links = [
 export default function Navbar() {
   const [active, setActive] = useState("Home");
   const [open, setOpen] = useState(false);
+  const navRef = useRef(null);
+
+  useEffect(() => {
+    function handleClick(e) {
+      if (open && navRef.current && !navRef.current.contains(e.target)) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClick);
+    document.addEventListener("touchstart", handleClick);
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+      document.removeEventListener("touchstart", handleClick);
+    };
+  }, [open]);
 
   useEffect(() => {
     const ids = links.map((l) => l.href.slice(1));
@@ -41,7 +56,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="navbar-pill">
+      <nav ref={navRef} className="navbar-pill">
         <div className="navbar-pill-inner">
           <div className="navbar-pill-links">
             {links.map((l) => (

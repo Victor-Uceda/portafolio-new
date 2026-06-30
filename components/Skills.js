@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
 const skills = [
   { name: "Java", color: "#007396" },
   { name: "Python", color: "#3776AB" },
@@ -40,25 +44,40 @@ function Icon({ name, color }) {
       return <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="4" fill="#111"/><text x="12" y="16" textAnchor="middle" fill="#E6E9EE" fontSize="9" fontWeight="bold">N</text></svg>;
     case "Git":
       return <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" stroke={p} strokeWidth="1.5" fill="rgba(240,80,50,0.1)"/><text x="12" y="16" textAnchor="middle" fill={p} fontSize="8" fontWeight="bold">G</text></svg>;
-    case "Three.js":
-      return <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 12l10 10 10-10L12 2z" stroke="#049ef4" strokeWidth="1.5" fill="rgba(4,158,244,0.1)"/><text x="12" y="16" textAnchor="middle" fill="#049ef4" fontSize="8" fontWeight="bold">3D</text></svg>;
     default:
       return <svg viewBox="0 0 24 24" fill={p}><circle cx="12" cy="12" r="6"/></svg>;
   }
 }
 
 export default function Skills() {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.disconnect(); } },
+      { threshold: 0.15 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="skills" className="skills-section">
-      <h2 className="skills-title">Tecnologias</h2>
+      <h2 className="skills-title">Tecnologías</h2>
 
-      <div className="skills-grid">
+      <div
+        ref={ref}
+        className={"skills-grid" + (visible ? " skills-visible" : "")}
+      >
         {skills.map((s) => (
           <span key={s.name} className="skill-item">
             <span className="skill-icon">
               <Icon name={s.name} color={s.color} />
             </span>
-            <span>{s.name}</span>
+            <span className="skill-label">{s.name}</span>
           </span>
         ))}
       </div>
