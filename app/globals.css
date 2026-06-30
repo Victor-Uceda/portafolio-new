@@ -361,8 +361,14 @@ section {
     max-width: 100%;
     min-width: 0;
   }
-  .cube-wrapper,
+  .cube-wrapper {
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+  }
   .cube-pre {
+    font-size: 11px;
     max-width: 100%;
     overflow: hidden;
   }
