@@ -19,11 +19,11 @@ const projects = [
   },
   {
     id: 3,
-    title: "Masarq",
+    title: "Mazarq",
     description:
       "Portafolio real para un artista de modelado 3D y visualizacion arquitectonica. Galeria de proyectos, descripcion de servicios y formulario de contacto para consultas de clientes.",
     tech: ["React", "HTML", "CSS", "Three.js"],
-    link: "https://project-rwz6m.vercel.app",
+    link: "https://mazarq.vercel.app/",
     image: "masarq.jpg",
   },
 ];
